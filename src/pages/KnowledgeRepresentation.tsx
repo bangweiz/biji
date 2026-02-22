@@ -5,23 +5,6 @@ import ContentTable from "@components/ContentTable/ContentTable";
 function KnowledgeRepresentation() {
 	return (
 		<div className="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-200 selection:text-blue-900 min-h-screen">
-			{/* Inject custom CSS for scrollbars and math blocks */}
-			<style
-				dangerouslySetInnerHTML={{
-					__html: `
-          ::-webkit-scrollbar { width: 8px; }
-          ::-webkit-scrollbar-track { background: #f1f1f1; }
-          ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-          ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-          
-          .math-block {
-              overflow-x: auto;
-              padding: 0.5rem 0;
-          }
-        `,
-				}}
-			/>
-
 			<ContentTable />
 
 			<div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
