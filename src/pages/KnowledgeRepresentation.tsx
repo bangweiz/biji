@@ -14,7 +14,7 @@ const tocItems = [
 ];
 
 function KnowledgeRepresentation() {
-	const [isContentTableOpen, setIsContentTableOpen] = useState(false);
+	const [isContentTableOpen, setIsContentTableOpen] = useState(true);
 
 	return (
 		<div
