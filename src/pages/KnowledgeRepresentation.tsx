@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { MathJax } from "better-react-mathjax";
 
 import ContentTable from "@components/ContentTable";
@@ -13,9 +14,20 @@ const tocItems = [
 ];
 
 function KnowledgeRepresentation() {
+	const [isContentTableOpen, setIsContentTableOpen] = useState(true);
+
 	return (
-		<div className="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-200 selection:text-blue-900 min-h-screen">
-			<ContentTable items={tocItems} />
+		<div
+			className={`bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-200 selection:text-blue-900 min-h-screen transition-all duration-300 ${
+				isContentTableOpen ? "lg:pl-72" : ""
+			}`}
+		>
+			<ContentTable
+				items={tocItems}
+				isOpen={isContentTableOpen}
+				onOpen={() => setIsContentTableOpen(true)}
+				onClose={() => setIsContentTableOpen(false)}
+			/>
 
 			<div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 				{/* Header */}

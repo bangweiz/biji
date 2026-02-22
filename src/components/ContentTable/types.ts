@@ -5,4 +5,7 @@ export interface ContentTableItem {
 
 export interface ContentTableProps {
 	items: ContentTableItem[];
+	isOpen: boolean;
+	onOpen: () => void;
+	onClose: () => void;
 }
