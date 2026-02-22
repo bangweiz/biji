@@ -11,7 +11,7 @@ const HOVER_COLORS = [
 	"hover:text-rose-600 hover:bg-rose-50",
 ];
 
-function ContentTable({ items = [] }: ContentTableProps) {
+function ContentTable({ items }: ContentTableProps) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const onOpen = () => setIsOpen(true);
