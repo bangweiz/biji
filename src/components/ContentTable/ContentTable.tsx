@@ -1,6 +1,17 @@
 import { useState } from "react";
+import type { ContentTableProps } from "./types";
 
-function ContentTable() {
+const HOVER_COLORS = [
+	"hover:text-blue-600 hover:bg-blue-50",
+	"hover:text-indigo-600 hover:bg-indigo-50",
+	"hover:text-green-600 hover:bg-green-50",
+	"hover:text-amber-600 hover:bg-amber-50",
+	"hover:text-purple-600 hover:bg-purple-50",
+	"hover:text-teal-600 hover:bg-teal-50",
+	"hover:text-rose-600 hover:bg-rose-50",
+];
+
+function ContentTable({ items = [] }: ContentTableProps) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const onOpen = () => setIsOpen(true);
@@ -68,55 +79,18 @@ function ContentTable() {
 						</button>
 					</div>
 					<nav className="space-y-2 text-sm text-slate-600 font-medium">
-						<a
-							href="#scripts-frames"
-							onClick={onClose}
-							className="block hover:text-blue-600 transition-colors p-2 -mx-2 rounded hover:bg-blue-50"
-						>
-							1. Early Knowledge Rep.
-						</a>
-						<a
-							href="#formal-system"
-							onClick={onClose}
-							className="block hover:text-indigo-600 transition-colors p-2 -mx-2 rounded hover:bg-indigo-50"
-						>
-							2. Formal System
-						</a>
-						<a
-							href="#propositional-logic"
-							onClick={onClose}
-							className="block hover:text-green-600 transition-colors p-2 -mx-2 rounded hover:bg-green-50"
-						>
-							3. Propositional Logic
-						</a>
-						<a
-							href="#first-order-logic"
-							onClick={onClose}
-							className="block hover:text-amber-600 transition-colors p-2 -mx-2 rounded hover:bg-amber-50"
-						>
-							4. First-Order Logic
-						</a>
-						<a
-							href="#semantics"
-							onClick={onClose}
-							className="block hover:text-purple-600 transition-colors p-2 -mx-2 rounded hover:bg-purple-50"
-						>
-							5. Semantics
-						</a>
-						<a
-							href="#validity"
-							onClick={onClose}
-							className="block hover:text-teal-600 transition-colors p-2 -mx-2 rounded hover:bg-teal-50"
-						>
-							6. Valid & Satisfiable
-						</a>
-						<a
-							href="#syntax"
-							onClick={onClose}
-							className="block hover:text-rose-600 transition-colors p-2 -mx-2 rounded hover:bg-rose-50"
-						>
-							7. Syntax
-						</a>
+						{items.map((item, index) => (
+							<a
+								key={item.id}
+								href={`#${item.id}`}
+								onClick={onClose}
+								className={`block transition-colors p-2 -mx-2 rounded ${
+									HOVER_COLORS[index % HOVER_COLORS.length]
+								}`}
+							>
+								{item.label}
+							</a>
+						))}
 					</nav>
 				</div>
 			</aside>
