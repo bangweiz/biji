@@ -17,6 +17,8 @@ function ContentTable({ items, isOpen, onOpen, onClose }: ContentTableProps) {
 			<button
 				onClick={onOpen}
 				className={`fixed top-6 left-6 z-40 p-2.5 bg-white rounded-lg shadow-md border border-slate-200 text-slate-600 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-opacity duration-300 cursor-pointer hidden lg:block ${isOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+				aria-hidden={isOpen}
+				tabIndex={isOpen ? -1 : 0}
 				aria-label="Open Table of Contents"
 				aria-expanded={isOpen}
 				aria-controls="drawer-content"
@@ -39,7 +41,7 @@ function ContentTable({ items, isOpen, onOpen, onClose }: ContentTableProps) {
 			<aside
 				id="drawer-content"
 				inert={!isOpen}
-				className={`fixed top-0 left-0 h-screen bg-white shadow-[4px_0_24px_rgba(0,0,0,0.05)] border-r border-slate-200 z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto hidden lg:block lg:w-72 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+				className={`fixed top-0 left-0 h-screen bg-white shadow-[4px_0_24px_rgba(0,0,0,0.05)] border-r border-slate-200 z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto w-72 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
 			>
 				<div className="p-6">
 					<div className="flex items-center justify-between mb-8">
