@@ -1,10 +1,9 @@
-function App() {
+import { MathJaxContext } from "better-react-mathjax";
 
-	return (
-		<h1 className="text-3xl font-bold underline">
-			Hello world!
-		</h1>
-	);
+import MathJaxConfig from "@/config/mathJax";
+
+function App() {
+	return <MathJaxContext config={MathJaxConfig}></MathJaxContext>;
 }
 
 export default App;
