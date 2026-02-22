@@ -1,11 +1,21 @@
 import { MathJax } from "better-react-mathjax";
 
-import ContentTable from "@components/ContentTable/ContentTable";
+import ContentTable from "@components/ContentTable";
+
+const tocItems = [
+	{ id: "scripts-frames", label: "1. Early Knowledge Rep." },
+	{ id: "formal-system", label: "2. Formal System" },
+	{ id: "propositional-logic", label: "3. Propositional Logic" },
+	{ id: "first-order-logic", label: "4. First-Order Logic" },
+	{ id: "semantics", label: "5. Semantics" },
+	{ id: "validity", label: "6. Valid & Satisfiable" },
+	{ id: "syntax", label: "7. Syntax" },
+];
 
 function KnowledgeRepresentation() {
 	return (
 		<div className="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-200 selection:text-blue-900 min-h-screen">
-			<ContentTable />
+			<ContentTable items={tocItems} />
 
 			<div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 				{/* Header */}
