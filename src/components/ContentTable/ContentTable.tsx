@@ -39,7 +39,7 @@ function ContentTable({ items, isOpen, onOpen, onClose }: ContentTableProps) {
 			<aside
 				id="drawer-content"
 				inert={!isOpen}
-				className={`fixed top-0 left-0 h-screen w-72 bg-white shadow-[4px_0_24px_rgba(0,0,0,0.05)] border-r border-slate-200 z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+				className={`fixed top-0 left-0 h-screen bg-white shadow-[4px_0_24px_rgba(0,0,0,0.05)] border-r border-slate-200 z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto w-full lg:w-72 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
 			>
 				<div className="p-6">
 					<div className="flex items-center justify-between mb-8">

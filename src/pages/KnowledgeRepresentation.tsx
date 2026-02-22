@@ -19,7 +19,7 @@ function KnowledgeRepresentation() {
 	return (
 		<div
 			className={`bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-200 selection:text-blue-900 min-h-screen transition-all duration-300 ${
-				isContentTableOpen ? "pl-72" : ""
+				isContentTableOpen ? "lg:pl-72" : ""
 			}`}
 		>
 			<ContentTable
