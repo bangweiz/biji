@@ -1,6 +1,6 @@
 import { MathJax } from "better-react-mathjax";
 
-import ContentTable from "@components/ContentTable/ContentTable";
+import ContentTable from "@components/ContentTable";
 
 const tocItems = [
 	{ id: "scripts-frames", label: "1. Early Knowledge Rep." },
